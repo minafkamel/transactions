@@ -1,7 +1,6 @@
 package com.minafkamel.transactions.di
 
 import com.minafkamel.transactions.TransactionsApplication
-import com.minafkamel.transactions.data.api.TransactionsApi
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -11,6 +10,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [AndroidSupportInjectionModule::class,
+        ActivityInjectorModule::class,
+        ApiInjectorModule::class,
         VMModule::class,
         ApplicationInjectorModule::class]
 )
