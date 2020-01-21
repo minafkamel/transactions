@@ -1,18 +1,16 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.minafkamel.transactions"
-        minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
     }
     buildTypes {
         release {
@@ -24,10 +22,40 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation Dependencies.kotlinStd
+
+    implementation Dependencies.appCompat
+    implementation Dependencies.coreKtx
+    implementation Dependencies.constraintLayout
+
+    implementation Dependencies.lifecycleExtensions
+    implementation Dependencies.lifecycleViewModelKtx
+    implementation Dependencies.lifecycleSavedState
+    implementation Dependencies.activityExtensions
+    implementation Dependencies.assistedInjection
+    kapt Dependencies.assistedInjectionProcessor
+    implementation Dependencies.material
+
+    implementation Dependencies.rxJava
+    implementation Dependencies.rxJavaAndroid
+    implementation Dependencies.rxJavaRetrofitAdapter
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitGsonConverter
+    implementation Dependencies.loggingInterceptor
+
+    implementation Dependencies.dagger
+    implementation Dependencies.daggerAndroid
+    implementation Dependencies.daggerSupport
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerProcessor
+
+    implementation Dependencies.junit
+    implementation Dependencies.mockito
+    implementation Dependencies.mockitoAndroid
+    implementation Dependencies.mockitoKotlin
+    androidTestImplementation Dependencies.junitExt
+    androidTestImplementation Dependencies.espresso
+    testImplementation Dependencies.archComponentsTest
+
 }
