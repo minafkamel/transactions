@@ -8,7 +8,7 @@ class TransactionsRaw(@SerializedName("bookings") val transactions: List<Transac
         val category: String?,
         @SerializedName("category_icon") val categoryIcon: String?,
         val name: String?,
-        val timesStamp: String?,
+        val timestamp: String?,
         val amount: Amount?
     ) {
         class Amount(val currency: String?, val value: Double?)

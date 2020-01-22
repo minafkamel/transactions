@@ -6,9 +6,8 @@ fun createTransactionsRaw(
     category: String? = "category",
     categoryIcon: String? = "categoryIcon",
     name: String? = "name",
-    timesStamp: String? = "2020-01-09T14:46:33Z",
-    currency: String? = "currency",
-    value: Double? = 1.0
+    timesStamp: String? = "2020-01-09 14:46:33",
+    amount: TransactionsRaw.Transaction.Amount? = createAmount()
 ): TransactionsRaw {
     return TransactionsRaw(
         listOf(
@@ -17,8 +16,15 @@ fun createTransactionsRaw(
                 categoryIcon,
                 name,
                 timesStamp,
-                TransactionsRaw.Transaction.Amount(currency, value)
+                amount
             )
         )
     )
+}
+
+fun createAmount(
+    value: Double? = 1.0,
+    currency: String? = "currency"
+): TransactionsRaw.Transaction.Amount {
+    return TransactionsRaw.Transaction.Amount(currency, value)
 }
