@@ -1,5 +1,6 @@
 package com.minafkamel.transactions.ui.main
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,11 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.minafkamel.transactions.R
+import com.squareup.picasso.Callback
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_transaction.view.*
+import java.lang.Exception
 
 class TransactionsAdapter(
     private val entities: List<TransactionViewEntity>
@@ -37,7 +40,7 @@ class TransactionsAdapter(
                     itemView.context, entity.transactionAmount.color
                 )
             )
-            itemView.transactionDateTextView.text = entity.title
+            itemView.transactionTitleTextView.text = entity.title
             itemView.transactionDateTextView.text = entity.date
             itemView.categoryTextView.text = entity.category
 
@@ -48,7 +51,6 @@ class TransactionsAdapter(
                 Picasso
                     .get()
                     .load(entity.image.imageUrl)
-                    .networkPolicy(NetworkPolicy.OFFLINE)
                     .placeholder(R.drawable.ic_transactions_default)
                     .fit()
                     .centerCrop()
