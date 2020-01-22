@@ -50,6 +50,8 @@ dependencies {
     kapt Dependencies.daggerCompiler
     kapt Dependencies.daggerProcessor
 
+    implementation Dependencies.picasso
+
     implementation Dependencies.junit
     implementation Dependencies.mockito
     implementation Dependencies.mockitoAndroid

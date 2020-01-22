@@ -1,6 +1,7 @@
 package com.minafkamel.transactions
 
 import com.minafkamel.transactions.data.entities.TransactionsRaw
+import com.minafkamel.transactions.ui.main.TransactionViewEntity
 
 fun createTransactionsRaw(
     category: String? = "category",
@@ -28,3 +29,13 @@ fun createAmount(
 ): TransactionsRaw.Transaction.Amount {
     return TransactionsRaw.Transaction.Amount(currency, value)
 }
+
+fun createTransactionsViewEntity() = listOf(
+    TransactionViewEntity(
+        TransactionViewEntity.TransactionImage(true, ""),
+        "",
+        "",
+        TransactionViewEntity.TransactionAmount("", 1)
+        , ""
+    )
+)

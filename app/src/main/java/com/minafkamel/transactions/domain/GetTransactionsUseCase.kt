@@ -13,6 +13,6 @@ class GetTransactionsUseCase @Inject constructor(
         return transactionsRepository.getTransactions()
     }
 
-    class Params
+    data class Params(val unit: Unit = Unit)
 }
 

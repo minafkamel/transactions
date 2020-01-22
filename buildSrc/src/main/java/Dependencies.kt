@@ -23,6 +23,7 @@ object Versions {
     const val retrofit = "2.3.0"
     const val loggingInterceptor = "3.8.0"
     const val retrofitGsonConverter = "2.3.0"
+    const val picasso = "2.71828"
     const val junit = "4.12"
     const val mockito = "3.1.0"
     const val mockitoKotlin = "2.2.0"
@@ -64,6 +65,8 @@ object Dependencies{
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
     const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitGsonConverter}"
+
+    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
